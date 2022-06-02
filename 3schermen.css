@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* groot scherm */
+.containter {
+  height: 100vh;
+  color: #124f9aed;
+  box-sizing: border-box;
+  background-color: #ffd7e4;
+  padding: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 50px 1fr 1fr 1fr 5fr 50px;
+  grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    " w n n n n "
+    " w p p p p "
+    " w p p p p "
+    " w p p p p "
+    " w m m m m "
+    " w f f f f ";
+}
+
+.list-navigatie {
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+  grid-area: n;
+  padding-left: 60%;
+}
+
+ul {
+  padding-top: 15px;
+  display: flex;
+  list-style: none;
+  padding-right: 50px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  grid-area: 2 / 2 / 6/ -1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 30px;
+  font-size: xx-large;
+}
+
+.widget {
+  border: 1px solid black;
+  background-color: #124f9aa7;
+  border-radius: 5px;
+  text-align: center;
+  font-size: xx-large;
+  color: green;
+  grid-area: w;
+  padding-top: 60px;
+}
+
+.widget-small {
+  grid-area: 1 / 1 / 2 / 2;
+  visibility: collapse;
+}
+
+.text-agenda {
+  grid-area: 1 / 1 / 2 / 2;
+  text-align: center;
+  font-weight: 500;
+  font-size: x-large;
+  color: white;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+#front-image {
+  grid-area: p;
+  background-color: rgb(74, 65, 98);
+  max-width: 1200px;
+  width: 95%;
+  height: auto;
+
+  margin-top: 1%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer {
+  background-color: #f3585083;
+  grid-area: f;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* medium scherm */
+@media only screen and (max-width: 1200px) {
+  .containter {
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr 50px;
+    grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      " w n n n n "
+      " w p p p p "
+      " w p p p p "
+      " w p p p p "
+      " w m m m p "
+      " w f f f f ";
+  }
+
+  #front-image {
+    grid-area: p;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 900px;
+    height: auto;
+    margin-right: 3%;
+  }
+
+  .list-navigatie {
+    padding-right: 0;
+    padding-left: 200px;
+  }
+
+  .main {
+    grid-area: m;
+    padding-bottom: 100px;
+    border-radius: 5px;
+  }
+
+  .footer {
+    border-radius: 5px;
+  }
+}
+
+/* mobiel scherm */
+@media only screen and (max-width: 767px) {
+  .containter {
+    justify-content: center;
+    overflow: scroll;
+    grid-template-rows: 60px 60px 330px 440px 60px;
+    grid-template-columns: 560px;
+    grid-template-areas:
+      " n  "
+      " m  "
+      " p  "
+      " w "
+      " f ";
+  }
+  .list-navigatie {
+    border: 3px solid black;
+    border-radius: 15px;
+    padding-right: 0;
+    padding-left: 0;
+    grid-area: n;
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .main {
+    border: none;
+    background-color: #ffd7e4;
+    border-radius: 15px;
+    grid-area: m;
+    font-size: x-large;
+    padding-bottom: 15px;
+  }
+
+  #front-image {
+    background-color: #6d262283;
+    border-radius: 15px;
+    grid-area: p;
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 560px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .widget-small {
+    border-radius: 15px;
+    margin: 0;
+    padding-top: 20px;
+    visibility: visible;
+    background-color: #124f9aa7;
+    grid-area: w;
+    display: flex;
+    justify-content: center;
+    border: 3px solid white;
+  }
+
+  .text-agenda {
+    grid-area: w;
+    text-align: center;
+    font-weight: 200;
+    font-size: large;
+    color: white;
+
+    margin-top: 0;
+  }
+
+  .widget {
+    visibility: collapse;
+  }
+
+  .footer {
+    border-radius: 15px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    grid-area: f;
+  }
+}
